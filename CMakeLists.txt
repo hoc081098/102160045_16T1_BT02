@@ -3,4 +3,4 @@ project(BaiTapOOP02)
 
 set(CMAKE_CXX_STANDARD 98)
 
-add_executable(BaiTapOOP02 main.cpp fraction.cpp fraction.h)
+add_executable(BaiTapOOP02 main.cpp fraction.cpp fraction.h fractionlist.cpp fractionlist.h)
