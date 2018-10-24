@@ -18,7 +18,7 @@ FractionList::FractionList(size_t n) : n(n), array(NULL) {
 }
 
 FractionList::~FractionList() {
-  if (array) freeArray(array);
+  freeArray(array);
 }
 
 istream &operator>>(istream &is, FractionList &list) {
@@ -69,7 +69,36 @@ const Fraction &FractionList::operator[](std::size_t idx) const {
 void FractionList::freeAndAllocArray(size_t n) {
   if (n < 0) throw std::invalid_argument("N must be greater than or equal to zero");
 
-  if (array) freeArray(array);
+  freeArray(array);
   array = allocArray(n);
   this->n = n;
+}
+
+FractionList::FractionList(const FractionList &other) {
+  n = other.n;
+  array = new Fraction[n];
+  std::copy(other.array, other.array + n, array);
+}
+
+FractionList &FractionList::operator=(const FractionList &rhs) {
+  if (this != &rhs) {
+    if (n != rhs.n) {
+      delete[] array;
+      n = 0;
+      array = NULL;
+
+      array = new Fraction[rhs.n];
+      n = rhs.n;
+    }
+    std::copy(rhs.array, rhs.array + rhs.n, array);
+  }
+  return *this;
+}
+
+bool FractionList::operator==(const FractionList &rhs) const {
+  return n == rhs.n && std::equal(array, array + n, rhs.array);
+}
+
+bool FractionList::operator!=(const FractionList &rhs) const {
+  return !(rhs == *this);
 }

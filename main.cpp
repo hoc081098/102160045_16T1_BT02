@@ -1,4 +1,5 @@
 
+#include <vector>
 #include "fraction.h"
 #include "fractionlist.h"
 
@@ -46,7 +47,25 @@ int main() {
     std::cin >> list;
     std::cout << list << '\n';
 
-    std::cout << list[-2] << '\n';
+    std::cout << list[0] << '\n';
+
+    FractionList copy;
+    copy = list;
+    std::cout << copy << '\n';
+
+    std::cout << list << '\n';
+    list[0] = Fraction(7, 8);
+
+    std::cout << copy << '\n';
+
+    std::cout << list << '\n';
+
+    copy = list;
+    std::cout << (copy == list) << '\n';
+
+    int a1[]={1, 2, 3, 4};
+    int a2[]={1, 2, 3};
+    std::cout << "%" << std::equal(a1, a1+3, a2) << '\n';
   } catch (const std::exception &e) {
     std::cout << e.what() << '\n';
   }

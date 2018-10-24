@@ -24,6 +24,8 @@ class FractionList {
  public:
   explicit FractionList(size_t n = 0);
 
+  FractionList(const FractionList &other);
+
   virtual ~FractionList();
 
   Fraction &operator[](std::size_t idx);
@@ -34,6 +36,11 @@ class FractionList {
 
   friend ostream &operator<<(ostream &os, const FractionList &list);
 
+  FractionList &operator=(const FractionList &rhs);
+
+  bool operator==(const FractionList &rhs) const;
+
+  bool operator!=(const FractionList &rhs) const;
 };
 
 
