@@ -173,22 +173,22 @@ void Fraction::set_denominator(int denominator) {
 }
 
 void *Fraction::operator new(std::size_t sz) {
-  std::cout << "custom new for size " << sz << '\n';
+  std::cout << "Custom Fraction::new for size " << sz << '\n';
   return ::operator new(sz);
 }
 
 void *Fraction::operator new[](std::size_t sz) {
-  std::cout << "custom new[] for size " << sz << '\n';
+  std::cout << "Custom Fraction::new[] for size " << sz << '\n';
   return ::operator new(sz);
 }
 
 void Fraction::operator delete(void *ptr, std::size_t sz) {
-  std::cout << "custom delete for size " << sz << '\n';
+  std::cout << "Custom Fraction::delete for size " << sz << '\n';
   ::operator delete(ptr);
 }
 
 void Fraction::operator delete[](void *ptr, std::size_t sz) {
-  std::cout << "custom delete[] for size " << sz << '\n';
+  std::cout << "Custom Fraction::delete[] for size " << sz << '\n';
   ::operator delete(ptr);
 }
 

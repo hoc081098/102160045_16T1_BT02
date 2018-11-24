@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/Admin/Documents/Cpp/BaiTapOOP02/fraction.h
+iostream
+-
+sstream
+-
+cstdlib
+-
+cmath
+-
+
+D:/Admin/Documents/Cpp/BaiTapOOP02/fractionlist.cpp
+fractionlist.h
+D:/Admin/Documents/Cpp/BaiTapOOP02/fractionlist.h
+
+D:/Admin/Documents/Cpp/BaiTapOOP02/fractionlist.h
+ostream
+-
+fraction.h
+D:/Admin/Documents/Cpp/BaiTapOOP02/fraction.h
+

@@ -33,7 +33,9 @@ istream &operator>>(istream &is, FractionList &list) {
     list.freeAndAllocArray(static_cast<size_t>(n));
   }
   for (int i = 0; i < n; ++i) {
+    std::cout << "Input fraction " << i << ": " << '\n';
     is >> list[i];
+    std::cout << '\n';
   }
 
   return is;
@@ -42,7 +44,7 @@ istream &operator>>(istream &is, FractionList &list) {
 ostream &operator<<(ostream &os, const FractionList &list) {
   os << "FractionList: size = " << list.n << ", array = [\n";
   for (int i = 0; i < list.n; ++i) {
-    os << "    [" << i << "] " << list[i];
+    os << "  [" << i << "] " << list[i];
     if (i < list.n - 1) os << ",\n";
   }
   return os << "\n]";
